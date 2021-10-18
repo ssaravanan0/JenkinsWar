@@ -4,7 +4,7 @@ node{
    def tomcatBin = 'C:\\apache-tomcat-9.0.2\\bin'
    def tomcatStatus = ''
    
-   agent { docker {image 'maven:3.8.3}}
+   agent { docker {image 'maven:3.8.3'}}
    stage('SCM Checkout'){
      git 'https://github.com/ssaravanan0/JenkinsWar'
    }
