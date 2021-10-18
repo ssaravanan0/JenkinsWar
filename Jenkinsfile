@@ -22,6 +22,7 @@ node{
                   "${tomcatBin}\\shutdown.bat"
                   sleep(time:10,unit:"SECONDS") 
                )
+'''
    }
    stage('Deploy to Tomcat'){
      bat "copy target\\JenkinsWar.war \"${tomcatWeb}\\JenkinsWar.war\""
