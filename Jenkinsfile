@@ -1,9 +1,10 @@
 node{
-
+ 
    def tomcatWeb = 'C:\\apache-tomcat-9.0.2\\webapps'
    def tomcatBin = 'C:\\apache-tomcat-9.0.2\\bin'
    def tomcatStatus = ''
    
+   agent { docker {image 'maven:3.8.3}}
    stage('SCM Checkout'){
      git 'https://github.com/ssaravanan0/JenkinsWar'
    }
@@ -24,6 +25,7 @@ node{
                )
 '''
    }*/
+   /*
    stage('Deploy to Tomcat'){
      bat "copy target\\JenkinsWar.war \"${tomcatWeb}\\JenkinsWar.war\""
    }
@@ -31,5 +33,5 @@ node{
          sleep(time:5,unit:"SECONDS") 
          bat "${tomcatBin}\\startup.bat"
          sleep(time:100,unit:"SECONDS")
-   }
+   }*/
 }
